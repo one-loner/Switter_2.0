@@ -9,7 +9,7 @@ $config = loadConfig();
 $selection = input($_GET, 'language', input($_POST, 'language', $config['language']));
 locale(isset(languages()[$selection]) ? $selection : $config['language']);
 $configured = is_file(CONFIG_FILE) || is_file(__DIR__ . '/.switter-installed');
-$minimumPatch = ['8.2' => 80235, '8.3' => 80336, '8.4' => 80427, '8.5' => 80512];
+$minimumPatch = ['8.2' => 80200, '8.3' => 80300, '8.4' => 80400, '8.5' => 80512];
 $branch = PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;
 $requirements = PHP_VERSION_ID >= ($minimumPatch[$branch] ?? 80235)
     && !preg_match('/(?:dev|alpha|beta|rc)/i', PHP_VERSION)
